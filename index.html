@@ -11,6 +11,12 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        --color-navy: #353f4e;
+        --color-gold: #fabd5d;
+        --color-white: #ffffff;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -19,12 +25,18 @@
 
       html,
       body {
-        height: 100%;
-        background: black;
+        min-height: 100%;
+        background: url("assets/background.jpg") center/cover fixed no-repeat;
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
       }
 
       #animation {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -33,7 +45,7 @@
       }
 
       .header {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
@@ -42,7 +54,7 @@
       }
 
       .footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
@@ -58,17 +70,23 @@
 
       h2 {
         font-family: "Cinzel", serif;
-        font-size: 48px;
-        color: #353f4e;
+        font-size: 50px;
+        color: var(--color-navy);
+      }
+
+      .landing-p {
+        font-family: "Mulish", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: var(--color-navy);
+        line-height: 1.5;
+        margin-bottom: 20px;
       }
 
       p {
         font-family: "Mulish", sans-serif;
         font-size: 30px;
-        font-weight: bold;
-        color: #353f4e;
-        line-height: 1.5;
-        margin-bottom: 20px;
+        color: var(--color-navy);
       }
 
       .play-button {
@@ -81,24 +99,194 @@
       .play-button:hover {
         transform: scale(1.05);
       }
+
+      .about-section {
+        position: relative;
+        display: flex;
+        padding: 5% 10%;
+      }
+
+      .about-content {
+        flex: 1;
+        padding-right: 5%;
+      }
+
+      .about-title {
+        font-family: "Cinzel", serif;
+        font-size: 64px;
+        color: var(--color-navy);
+        margin-bottom: 20px;
+      }
+
+      .about-subtitle {
+        font-family: "Mulish", sans-serif;
+        font-size: 24px;
+        color: var(--color-navy);
+        margin-bottom: 30px;
+      }
+
+      .video-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        max-width: 640px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .newsletter-section {
+        position: relative;
+        min-height: 30vh;
+        background: rgba(44, 52, 62, 0.9);
+        padding: 5% 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .newsletter-title {
+        font-family: "Cinzel", serif;
+        font-size: 48px;
+        color: var(--color-gold);
+        margin-bottom: 20px;
+      }
+
+      .newsletter-text {
+        font-family: "Mulish", sans-serif;
+        font-size: 24px;
+        color: var(--color-gold);
+        max-width: 600px;
+      }
+
+      .signup-button {
+        background: var(--color-gold);
+        color: var(--color-white);
+        font-family: "Mulish", sans-serif;
+        font-size: 24px;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .signup-button:hover {
+        transform: scale(1.05);
+      }
+
+      .features-section {
+        position: relative;
+        padding: 5% 10%;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .feature {
+        flex: 1;
+        text-align: center;
+      }
+
+      .feature h2 {
+        margin-bottom: 16px;
+      }
+
+      .feature p {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+
+      .feature-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
     </style>
   </head>
   <body>
-    <video id="animation" autoplay loop muted playsinline>
-      <source src="assets/Animation.mp4" type="video/mp4" />
-    </video>
+    <section class="hero">
+      <video id="animation" autoplay loop muted playsinline>
+        <source src="assets/Animation.mp4" type="video/mp4" />
+      </video>
 
-    <div class="header">
-      <img src="assets/Logo.png" alt="CELESTIAL TCG" class="logo" />
-    </div>
+      <div class="header">
+        <img src="assets/Logo.png" alt="CELESTIAL TCG" class="logo" />
+      </div>
 
-    <div class="footer">
-      <p>
-        Free to play card game<br />
-        for Mobile, PC, & Mac
-      </p>
-      <img src="assets/Wide-Button.png" alt="Play Free" class="play-button" />
-    </div>
+      <div class="footer">
+        <p class="landing-p">
+          Free to play card game<br />
+          for Mobile, PC, & Mac
+        </p>
+        <img src="assets/Wide-Button.png" alt="Play Free" class="play-button" />
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-content">
+        <h2 class="about-title">Explain this game</h2>
+        <p class="about-subtitle">Well, let me tell you</p>
+      </div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/Y19hzaZEzuc"
+          title="Celestial TCG Gameplay"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div>
+        <h2 class="newsletter-title">NEWSLETTER</h2>
+        <p class="newsletter-text">
+          Sign up to get the latest news on Celestial TCG, including
+          sneak-peaks, upcoming events, and exclusive rewards!
+        </p>
+      </div>
+      <button class="signup-button">Sign Up</button>
+    </section>
+
+    <section class="features-section">
+      <div class="feature">
+        <h2>DECKBUILDING</h2>
+        <p>Make interesting decks and stuff</p>
+        <img
+          src="assets/feature-deckbuilding.png"
+          alt="Deckbuilding Screenshot"
+          class="feature-image"
+        />
+      </div>
+
+      <div class="feature">
+        <h2>ADVENTURE</h2>
+        <p>Travellers called to a city, see what there is to learn</p>
+        <img
+          src="assets/feature-adventure.png"
+          alt="Adventure Screenshot"
+          class="feature-image"
+        />
+      </div>
+
+      <div class="feature">
+        <h2>COMPETE</h2>
+        <p>Play against opponent's in a clash of wit</p>
+        <img
+          src="assets/feature-compete.png"
+          alt="Compete Screenshot"
+          class="feature-image"
+        />
+      </div>
+    </section>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
