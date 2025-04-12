@@ -208,6 +208,31 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+
+      .social-section {
+        position: relative;
+        background: rgba(44, 52, 62, 0.9);
+        padding: 32px 10%;
+        text-align: center;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+      }
+
+      .social-link {
+        font-family: "Cinzel", serif;
+        font-size: 32px;
+        color: var(--color-gold);
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+
+      .social-link:hover {
+        transform: scale(1.05);
+      }
     </style>
   </head>
   <body>
@@ -225,14 +250,34 @@
           Free to play card game<br />
           for Mobile, PC, & Mac
         </p>
-        <img src="assets/Wide-Button.png" alt="Play Free" class="play-button" />
+        <a href="https://celestialtcg.com/" target="_blank">
+          <img
+            src="assets/Wide-Button.png"
+            alt="Play Free"
+            class="play-button"
+          />
+        </a>
       </div>
     </section>
 
     <section class="about-section">
       <div class="about-content">
         <h2 class="about-title">Explain this game</h2>
-        <p class="about-subtitle">Well, let me tell you</p>
+        <p class="about-subtitle">
+          In Celestial TCG, every match is a story waiting to be told. Unlike
+          traditional card games focused on combat, Celestial invites you to
+          weave narratives through strategic card play, where your choices echo
+          personal experiences and emotional journeys. Build your deck from a
+          rotating collection of cards that represent life's moments - from
+          quiet revelations to profound changes - and compete in a game where
+          victory isn't just about power, but about crafting the most compelling
+          tale. As day turns to night in each round, watch your story unfold
+          before an audience, where every card played adds a new layer to your
+          narrative. Whether you're exploring the single-player story mode or
+          competing against others, Celestial offers a fresh take on card
+          games where expression and strategy merge to create something truly
+          unique.
+        </p>
       </div>
       <div class="video-container">
         <iframe
@@ -258,8 +303,8 @@
 
     <section class="features-section">
       <div class="feature">
-        <h2>DECKBUILDING</h2>
-        <p>Make interesting decks and stuff</p>
+        <h2>Create Decks</h2>
+        <p>Make interesting decks and stuff you can use so many cards</p>
         <img
           src="assets/feature-deckbuilding.png"
           alt="Deckbuilding Screenshot"
@@ -285,6 +330,26 @@
           alt="Compete Screenshot"
           class="feature-image"
         />
+      </div>
+    </section>
+
+    <section class="social-section">
+      <div class="social-links">
+        <a
+          href="https://www.youtube.com/@Celestial-TCG"
+          class="social-link"
+          target="_blank"
+          >Youtube</a
+        >
+        <a
+          href="https://discord.gg/UXWswspB8S"
+          class="social-link"
+          target="_blank"
+          >Discord</a
+        >
+        <a href="https://x.com/CelestialTcg" class="social-link" target="_blank"
+          >Twitter</a
+        >
       </div>
     </section>
 
