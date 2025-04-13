@@ -76,7 +76,16 @@
           sneak-peaks, upcoming events, and exclusive rewards!
         </p>
       </div>
-      <button class="signup-button">Sign Up</button>
+      <form id="newsletter-form" class="newsletter-form">
+        <input
+          type="email"
+          id="email-input"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit" class="signup-button">Sign Up</button>
+      </form>
+      <div id="signup-message" class="signup-message"></div>
     </section>
 
     <section class="features-section">
@@ -145,6 +154,40 @@
         const video = document.getElementById("animation");
         video.play().catch(function (error) {
           console.log("Video autoplay failed:", error);
+        });
+
+        // Newsletter form handling
+        const form = document.getElementById("newsletter-form");
+        const messageDiv = document.getElementById("signup-message");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const email = document.getElementById("email-input").value;
+
+          try {
+            const response = await fetch("/api/subscribe", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              messageDiv.textContent = "Thanks for signing up!";
+              messageDiv.style.color = "#4CAF50";
+              form.reset();
+            } else {
+              messageDiv.textContent =
+                data.error || "Something went wrong. Please try again.";
+              messageDiv.style.color = "#f44336";
+            }
+          } catch (error) {
+            messageDiv.textContent = "Something went wrong. Please try again.";
+            messageDiv.style.color = "#f44336";
+          }
         });
       });
     </script>
