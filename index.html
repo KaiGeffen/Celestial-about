@@ -10,230 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Mulish:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --color-navy: #353f4e;
-        --color-gold: #fabd5d;
-        --color-white: #ffffff;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        min-height: 100%;
-        background: url("assets/background.jpg") center/cover fixed no-repeat;
-      }
-
-      .hero {
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      #animation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-top: 2%;
-        text-align: center;
-      }
-
-      .footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding-bottom: 2%;
-        text-align: center;
-      }
-
-      .logo {
-        width: 500px;
-        height: auto;
-        margin-bottom: 16px;
-      }
-
-      h2 {
-        font-family: "Cinzel", serif;
-        font-size: 50px;
-        color: var(--color-navy);
-      }
-
-      .landing-p {
-        font-family: "Mulish", sans-serif;
-        font-size: 30px;
-        font-weight: bold;
-        color: var(--color-navy);
-        line-height: 1.5;
-        margin-bottom: 20px;
-      }
-
-      p {
-        font-family: "Mulish", sans-serif;
-        font-size: 30px;
-        color: var(--color-navy);
-      }
-
-      .play-button {
-        width: 300px;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-
-      .play-button:hover {
-        transform: scale(1.05);
-      }
-
-      .about-section {
-        position: relative;
-        display: flex;
-        padding: 5% 10%;
-      }
-
-      .about-content {
-        flex: 1;
-        padding-right: 5%;
-      }
-
-      .about-title {
-        font-family: "Cinzel", serif;
-        font-size: 64px;
-        color: var(--color-navy);
-        margin-bottom: 20px;
-      }
-
-      .about-subtitle {
-        font-family: "Mulish", sans-serif;
-        font-size: 24px;
-        color: var(--color-navy);
-        margin-bottom: 30px;
-      }
-
-      .video-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .video-container iframe {
-        width: 100%;
-        aspect-ratio: 16/9;
-        max-width: 640px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .newsletter-section {
-        position: relative;
-        min-height: 30vh;
-        background: rgba(44, 52, 62, 0.9);
-        padding: 5% 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .newsletter-title {
-        font-family: "Cinzel", serif;
-        font-size: 48px;
-        color: var(--color-gold);
-        margin-bottom: 20px;
-      }
-
-      .newsletter-text {
-        font-family: "Mulish", sans-serif;
-        font-size: 24px;
-        color: var(--color-gold);
-        max-width: 600px;
-      }
-
-      .signup-button {
-        background: var(--color-gold);
-        color: var(--color-white);
-        font-family: "Mulish", sans-serif;
-        font-size: 24px;
-        padding: 12px 40px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-
-      .signup-button:hover {
-        transform: scale(1.05);
-      }
-
-      .features-section {
-        position: relative;
-        padding: 5% 10%;
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-      }
-
-      .feature {
-        flex: 1;
-        text-align: center;
-      }
-
-      .feature h2 {
-        margin-bottom: 16px;
-      }
-
-      .feature p {
-        font-size: 24px;
-        margin-bottom: 24px;
-      }
-
-      .feature-image {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .social-section {
-        position: relative;
-        background: rgba(44, 52, 62, 0.9);
-        padding: 32px 10%;
-        text-align: center;
-      }
-
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 64px;
-      }
-
-      .social-link {
-        font-family: "Cinzel", serif;
-        font-size: 32px;
-        color: var(--color-gold);
-        text-decoration: none;
-        transition: transform 0.2s;
-      }
-
-      .social-link:hover {
-        transform: scale(1.05);
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <section class="hero">
@@ -298,7 +75,10 @@
     <section class="features-section">
       <div class="feature">
         <h2>Create Decks</h2>
-        <p>Make interesting decks and stuff you can use so many cards</p>
+        <p>
+          Dream up and refine the decks you make from a full collection of over
+          100 unique cards
+        </p>
         <img
           src="assets/feature-deckbuilding.png"
           alt="Deckbuilding Screenshot"
@@ -308,7 +88,10 @@
 
       <div class="feature">
         <h2>ADVENTURE</h2>
-        <p>Travellers called to a city, see what there is to learn</p>
+        <p>
+          Complete interesting challenges to unlock cards as you learn about
+          travelers called to the City
+        </p>
         <img
           src="assets/feature-adventure.png"
           alt="Adventure Screenshot"
@@ -318,7 +101,10 @@
 
       <div class="feature">
         <h2>COMPETE</h2>
-        <p>Play against opponent's in a clash of wit</p>
+        <p>
+          Play against friends and rivals to become the very best, earning
+          rewards along the way
+        </p>
         <img
           src="assets/feature-compete.png"
           alt="Compete Screenshot"
