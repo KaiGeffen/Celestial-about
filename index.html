@@ -79,15 +79,22 @@
       <div class="footer">
         <p class="landing-p">
           Strategy card game<br />
-          for Mobile, PC, & Mac
+          <span id="no-download">No download required</span
+          ><!-- for Mobile, PC, & Mac -->
         </p>
-        <a href="https://celestialtcg.com/" target="_blank">
-          <img
-            src="assets/Wide-Button.png"
-            alt="Play Free"
-            class="play-button"
-          />
-        </a>
+        <p id="mobile-message" style="display: none">
+          Mobile in development<br />
+          Play on laptop
+        </p>
+        <div id="play-free-container">
+          <a href="https://celestialtcg.com/" target="_blank">
+            <img
+              src="assets/Wide-Button.png"
+              alt="Play Free"
+              class="play-button"
+            />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -222,39 +229,21 @@
           console.log("Video autoplay failed:", error);
         });
 
-        // Newsletter form handling
-        const form = document.getElementById("newsletter-form");
-        const messageDiv = document.getElementById("signup-message");
+        if (isMobile()) {
+          const playFree = document.getElementById("play-free-container");
+          const mobileMsg = document.getElementById("mobile-message");
+          const noDownload = document.getElementById("no-download");
+          if (playFree) playFree.style.display = "none";
+          if (mobileMsg) mobileMsg.style.display = "block";
+          if (noDownload) noDownload.style.display = "none";
+        }
 
-        form.addEventListener("submit", async function (e) {
-          e.preventDefault();
-          const email = document.getElementById("email-input").value;
-
-          try {
-            const response = await fetch("/api/newsletter/signup", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-              messageDiv.textContent = data.message || "Thanks for signing up!";
-              messageDiv.style.color = "#4CAF50";
-              form.reset();
-            } else {
-              messageDiv.textContent =
-                data.message || "Something went wrong. Please try again.";
-              messageDiv.style.color = "#f44336";
-            }
-          } catch (error) {
-            messageDiv.textContent = "Connection error. Please try again.";
-            messageDiv.style.color = "#f44336";
-          }
-        });
+        // Mobile detection and UI update
+        function isMobile() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+        }
       });
     </script>
   </body>
